@@ -1,0 +1,18 @@
+[2026-04-22T16:30:20+00:00] scraper v1.1.0 starting
+[2026-04-22T16:30:20+00:00] GET https://www.draamateater.ee/
+[2026-04-22T16:30:21+00:00]   -> 200, final url https://www.draamateater.ee/, 46714 bytes
+[2026-04-22T16:30:21+00:00]   kava candidates: ['https://www.draamateater.ee/repertuaar/', 'https://www.draamateater.ee/mangukava/', 'https://www.draamateater.ee/arhiiv/', 'https://www.draamateater.ee/lavastus/500-aastat-soprust', 'https://www.draamateater.ee/lavastus/uhe-naise-voitlused-ja-metamorfoosid', 'https://www.draamateater.ee/lavastus/hamlet']
+[2026-04-22T16:30:21+00:00] GET https://www.draamateater.ee/repertuaar/
+[2026-04-22T16:30:21+00:00]   -> 200, final url https://www.draamateater.ee/repertuaar/, 30847 bytes
+[2026-04-22T16:30:21+00:00]   draamateater: 0 candidate blocks, 0 leaves
+[2026-04-22T16:30:21+00:00]   draamateater: 5 candidate blocks, 3 leaves
+[2026-04-22T16:30:21+00:00] draamateater: 3 shows extracted from https://www.draamateater.ee/repertuaar/
+[2026-04-22T16:30:21+00:00] GET https://linnateater.ee/
+[2026-04-22T16:30:22+00:00]   -> 200, final url https://linnateater.ee/, 268154 bytes
+[2026-04-22T16:30:22+00:00]   kava candidates: ['https://linnateater.ee/mangukava/', 'https://linnateater.ee/lavastused/', 'https://linnateater.ee/anu-lamp-toob-linnateatri-hobuveskis-valja-monolavastuse-elisabet-reinsaluga/', 'https://linnateater.ee/linnateatri-uuslavastus-uurib-vastuolusid-uhe-vaikese-usukogukonna-sees/', 'https://linnateater.ee/linnateatri-mustas-saalis-esietendub-marta-aliide-jakovski-lavastus-sinisilmsed/', 'http://linnateater.ee/lavastused/']
+[2026-04-22T16:30:22+00:00] GET https://linnateater.ee/mangukava/
+[2026-04-22T16:30:22+00:00]   -> 200, final url https://linnateater.ee/mangukava/, 213356 bytes
+[2026-04-22T16:30:22+00:00]   linnateater: 24 candidate blocks, 5 leaves
+[2026-04-22T16:30:22+00:00]   linnateater: 30 candidate blocks, 9 leaves
+[2026-04-22T16:30:22+00:00] linnateater: 6 shows extracted from https://linnateater.ee/mangukava/
+[2026-04-22T16:30:22+00:00] wrote data/state.json — draamateater=3 ok=True, linnateater=6 ok=True

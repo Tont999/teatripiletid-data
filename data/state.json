@@ -1,0 +1,116 @@
+{
+  "generated_at": "2026-04-22T16:30:22+00:00",
+  "scraper_version": "1.1.0",
+  "theaters": [
+    {
+      "id": "draamateater",
+      "name": "Eesti Draamateater",
+      "homepage": "https://www.draamateater.ee/",
+      "source_url": "https://www.draamateater.ee/repertuaar/",
+      "scraped_ok": true,
+      "error": null,
+      "shows": [
+        {
+          "id": "draamateater:loe-edasi:1934-07-01T00:00:00",
+          "title": "Loe edasi",
+          "datetime_str": "1. juuli 1934",
+          "iso_datetime": "1934-07-01T00:00:00",
+          "venue": null,
+          "ticket_url": "https://www.draamateater.ee/uudis/in-memoriam-ester-pajusoo",
+          "ticket_status": null,
+          "price_range": null
+        },
+        {
+          "id": "draamateater:t-na-13-aprillil-j-b-ra-kunsti-etendus:2026-04-13T00:00:00",
+          "title": "Täna, 13. aprillil jääb ära „Kunsti“ etendus",
+          "datetime_str": "13.04.2026",
+          "iso_datetime": "2026-04-13T00:00:00",
+          "venue": null,
+          "ticket_url": "https://www.draamateater.ee/uudis/tana-13-aprillil-jaab-ara-kunsti-etendus",
+          "ticket_status": "available",
+          "price_range": null
+        },
+        {
+          "id": "draamateater:ilmus-draamateatri-ajalehe-kevadnumber-2026:2026-04-15T00:00:00",
+          "title": "Ilmus Draamateatri ajalehe kevadnumber 2026",
+          "datetime_str": "15.04.2026",
+          "iso_datetime": "2026-04-15T00:00:00",
+          "venue": null,
+          "ticket_url": "https://www.draamateater.ee/uudis/ilmus-draamateatri-ajalehe-kevadnumber-2026",
+          "ticket_status": null,
+          "price_range": null
+        }
+      ]
+    },
+    {
+      "id": "linnateater",
+      "name": "Tallinna Linnateater",
+      "homepage": "https://linnateater.ee/",
+      "source_url": "https://linnateater.ee/mangukava/",
+      "scraped_ok": true,
+      "error": null,
+      "shows": [
+        {
+          "id": "linnateater:linnateatri-mustas-saalis-esietendub-marta-aliide-jakovski-l:2026-04-10T00:00:00",
+          "title": "Linnateatri Mustas saalis esietendub Marta Aliide Jakovski lavastus „Sinisilmsed“",
+          "datetime_str": "10.04.2026",
+          "iso_datetime": "2026-04-10T00:00:00",
+          "venue": null,
+          "ticket_url": "https://linnateater.ee/linnateatri-mustas-saalis-esietendub-marta-aliide-jakovski-lavastus-sinisilmsed/",
+          "ticket_status": null,
+          "price_range": null
+        },
+        {
+          "id": "linnateater:tallinna-linnateater-otsib-helitehnikut:2026-04-10T00:00:00",
+          "title": "Tallinna Linnateater otsib helitehnikut!",
+          "datetime_str": "10.04.2026",
+          "iso_datetime": "2026-04-10T00:00:00",
+          "venue": null,
+          "ticket_url": "https://linnateater.ee/tallinna-linnateater-otsib-helitehnikut/",
+          "ticket_status": null,
+          "price_range": null
+        },
+        {
+          "id": "linnateater:leida-rammo-fondi-stipendiumi-p-lvis-maiken-pius:2026-04-16T00:00:00",
+          "title": "Leida Rammo fondi stipendiumi pälvis Maiken Pius",
+          "datetime_str": "16.04.2026",
+          "iso_datetime": "2026-04-16T00:00:00",
+          "venue": null,
+          "ticket_url": "https://linnateater.ee/leida-rammo-fondi-stipendiumi-palvis-maiken-pius/",
+          "ticket_status": null,
+          "price_range": null
+        },
+        {
+          "id": "linnateater:linnateatri-uuslavastus-uurib-vastuolusid-he-v-ikese-usukogu:2026-04-17T00:00:00",
+          "title": "Linnateatri uuslavastus uurib vastuolusid ühe väikese usukogukonna sees",
+          "datetime_str": "17.04.2026",
+          "iso_datetime": "2026-04-17T00:00:00",
+          "venue": null,
+          "ticket_url": "https://linnateater.ee/linnateatri-uuslavastus-uurib-vastuolusid-uhe-vaikese-usukogukonna-sees/",
+          "ticket_status": null,
+          "price_range": null
+        },
+        {
+          "id": "linnateater:anu-lamp-toob-linnateatri-hobuveskis-v-lja-monolavastuse-eli:2026-04-21T00:00:00",
+          "title": "Anu Lamp toob Linnateatri Hobuveskis välja monolavastuse Elisabet Reinsaluga",
+          "datetime_str": "21.04.2026",
+          "iso_datetime": "2026-04-21T00:00:00",
+          "venue": null,
+          "ticket_url": "https://linnateater.ee/anu-lamp-toob-linnateatri-hobuveskis-valja-monolavastuse-elisabet-reinsaluga/",
+          "ticket_status": null,
+          "price_range": null
+        },
+        {
+          "id": "linnateater:372-665-0800:2027-00-11T19:00:00",
+          "title": "+372 665 0800",
+          "datetime_str": "11.00–19.00",
+          "iso_datetime": "2027-00-11T19:00:00",
+          "venue": null,
+          "ticket_url": "tel:+3726650800",
+          "ticket_status": null,
+          "price_range": null
+        }
+      ]
+    }
+  ]
+}
