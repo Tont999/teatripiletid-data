@@ -1,21 +1,15 @@
 #!/usr/bin/env python3
 """Scrape Eesti Draamateater and Tallinna Linnateater kava pages.
 
-This scraper runs in a GitHub Actions environment (no network restrictions),
-fetches each theater's public kava page, attempts to extract a list of
-upcoming performances with date/time and ticket-purchase links, and writes
-a single structured JSON file (`data/state.json`) that downstream consumers
-(a Cowork scheduled task) can read.
+The scraper does NOT hardcode kava URLs — it fetches each theater's homepage
+first, discovers the most likely "Kava / Repertuaar" link from the navigation,
+follows it, and parses the resulting page. If discovery fails it falls back to
+parsing the homepage itself. This makes the scraper resilient to URL changes.
 
-Design goals:
-  - Permissive parsing: multiple fallback strategies per theater since
-    site HTML may change without notice.
-  - Always emit a valid state.json even if a theater fails (with
-    `scraped_ok: false` and an error message) so downstream tooling can
-    reason about partial failures.
-  - Save raw HTML under `data/raw/` so diagnosing breakage is easy.
-
-Output schema is documented in the top-level README.
+Output:
+  data/state.json    - combined structured state
+  data/raw/*.html    - raw HTML snapshots (diagnostic)
+  data/log.txt       - run log
 """
 from __future__ import annotations
 
@@ -26,19 +20,23 @@ import traceback
 from dataclasses import asdict, dataclass, field
 from datetime import datetime, timezone
 from pathlib import Path
-from typing import Any, Iterable
+from typing import Any
+from urllib.parse import urljoin, urlparse
 
 import requests
 from bs4 import BeautifulSoup, Tag
 from dateutil import parser as dateparser
 
-SCRAPER_VERSION = "1.0.0"
+SCRAPER_VERSION = "1.1.0"
 UA = (
-    "Mozilla/5.0 (compatible; TeatripiletidScraper/"
-    + SCRAPER_VERSION
-    + "; +https://github.com/Tont999/teatripiletid-data)"
+    "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) "
+    "Chrome/124.0.0.0 Safari/537.36 TeatripiletidScraper/" + SCRAPER_VERSION
 )
 TIMEOUT = 30
+KAVA_KEYWORDS = [
+    "kava", "repertuaar", "repertoire", "etendused", "programm",
+    "programme", "calendar", "kalender", "lava",
+]
 
 ROOT = Path(__file__).resolve().parent.parent
 DATA = ROOT / "data"
@@ -66,7 +64,7 @@ class Show:
     iso_datetime: str | None = None
     venue: str | None = None
     ticket_url: str | None = None
-    ticket_status: str | None = None  # "available" | "sold_out" | "limited" | "unknown"
+    ticket_status: str | None = None
     price_range: str | None = None
 
 
@@ -74,7 +72,8 @@ class Show:
 class Theater:
     id: str
     name: str
-    source_url: str
+    homepage: str
+    source_url: str = ""  # filled once discovery succeeds
     scraped_ok: bool = False
     error: str | None = None
     shows: list[Show] = field(default_factory=list)
@@ -83,12 +82,77 @@ class Theater:
 # ---------------------------------------------------------------------------
 # HTTP helpers
 # ---------------------------------------------------------------------------
-def fetch(url: str) -> str:
+def new_session() -> requests.Session:
+    s = requests.Session()
+    s.headers.update({
+        "User-Agent": UA,
+        "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+        "Accept-Language": "et,en;q=0.5",
+    })
+    return s
+
+
+def fetch(session: requests.Session, url: str, allow_404: bool = False) -> tuple[int, str]:
     log(f"GET {url}")
-    resp = requests.get(url, headers={"User-Agent": UA, "Accept-Language": "et,en;q=0.5"}, timeout=TIMEOUT)
-    resp.raise_for_status()
+    resp = session.get(url, timeout=TIMEOUT, allow_redirects=True)
+    if not allow_404:
+        resp.raise_for_status()
     resp.encoding = resp.apparent_encoding or resp.encoding
-    return resp.text
+    log(f"  -> {resp.status_code}, final url {resp.url}, {len(resp.text)} bytes")
+    return resp.status_code, resp.text
+
+
+def fetch_first_ok(session: requests.Session, urls: list[str]) -> tuple[str | None, str | None]:
+    """Try URLs in order, return (url, html) of first that returns 200 with content."""
+    for u in urls:
+        try:
+            code, html = fetch(session, u, allow_404=True)
+            if code == 200 and html and len(html) > 500:
+                return u, html
+        except Exception as e:
+            log(f"  fetch exception for {u}: {e}")
+    return None, None
+
+
+# ---------------------------------------------------------------------------
+# Kava URL discovery
+# ---------------------------------------------------------------------------
+def discover_kava_urls(base_url: str, html: str) -> list[str]:
+    """Score all links on a homepage by how likely they point to the
+    programme / repertoire page. Returns top candidates in score order."""
+    soup = BeautifulSoup(html, "lxml")
+    base_host = urlparse(base_url).netloc.lower()
+    scored: list[tuple[int, str]] = []
+    for a in soup.find_all("a", href=True):
+        text = (a.get_text() or "").strip().lower()
+        href = a["href"].strip()
+        if not href or href.startswith(("#", "javascript:", "mailto:", "tel:")):
+            continue
+        abs_url = urljoin(base_url, href)
+        # Only consider same-host links (avoid leaving the site).
+        if urlparse(abs_url).netloc.lower() != base_host:
+            continue
+        score = 0
+        for kw in KAVA_KEYWORDS:
+            if text == kw:
+                score += 100
+            elif text.startswith(kw + " ") or text.endswith(" " + kw):
+                score += 50
+            elif kw in text:
+                score += 25
+            if kw in abs_url.lower():
+                score += 10
+        if score > 0:
+            scored.append((score, abs_url))
+    # dedupe preserving highest score per url
+    best: dict[str, int] = {}
+    for score, url in scored:
+        if url not in best or best[url] < score:
+            best[url] = score
+    ranked = sorted(best.items(), key=lambda kv: kv[1], reverse=True)
+    urls = [u for u, _ in ranked[:6]]
+    log(f"  kava candidates: {urls}")
+    return urls
 
 
 # ---------------------------------------------------------------------------
@@ -110,22 +174,21 @@ EST_MONTHS = {
 }
 
 DATE_PATTERNS = [
-    # 10.05.2026 19:00 / 10.05.2026 kell 19:00
-    re.compile(r"(?P<d>\d{1,2})\.(?P<m>\d{1,2})\.(?P<y>\d{4})(?:[^\d]{0,6}(?:kell\s*)?(?P<h>\d{1,2})[.:](?P<mi>\d{2}))?"),
+    # 10.05.2026 19:00 / 10.05 19:00 / 10.05.26
+    re.compile(r"(?P<d>\d{1,2})\.(?P<m>\d{1,2})\.?(?P<y>\d{2,4})?(?:[^\d]{0,6}(?:kell\s*)?(?P<h>\d{1,2})[.:](?P<mi>\d{2}))?"),
     # 10. mai 2026 19:00
     re.compile(
         r"(?P<d>\d{1,2})\.?\s+(?P<mon>"
         + "|".join(sorted(EST_MONTHS.keys(), key=len, reverse=True))
         + r")\w*\s+(?P<y>\d{4})(?:[^\d]{0,6}(?:kell\s*)?(?P<h>\d{1,2})[.:](?P<mi>\d{2}))?",
-        re.IGNORECASE,
+        re.IGNORECASE | re.UNICODE,
     ),
-    # 2026-05-10T19:00
+    # 2026-05-10T19:00 or 2026-05-10 19:00
     re.compile(r"(?P<y>\d{4})-(?P<m>\d{2})-(?P<d>\d{2})(?:[T\s](?P<h>\d{2}):(?P<mi>\d{2}))?"),
 ]
 
 
 def parse_datetime(text: str) -> tuple[str | None, str | None]:
-    """Return (raw, iso) best-effort date extraction from free text."""
     if not text:
         return None, None
     text = re.sub(r"\s+", " ", text).strip()
@@ -136,24 +199,27 @@ def parse_datetime(text: str) -> tuple[str | None, str | None]:
             continue
         gd = m.groupdict()
         try:
-            if "mon" in gd and gd.get("mon"):
+            if gd.get("mon"):
                 month = EST_MONTHS[gd["mon"].lower()]
             else:
                 month = int(gd["m"])
-            year = int(gd["y"])
+            year_str = gd.get("y")
+            if year_str:
+                year = int(year_str)
+                if year < 100:
+                    year = 2000 + year
+            else:
+                # no year — assume current or next year based on month vs today
+                now = datetime.now()
+                year = now.year if month >= now.month else now.year + 1
             day = int(gd["d"])
             hour = int(gd["h"]) if gd.get("h") else 0
             minute = int(gd["mi"]) if gd.get("mi") else 0
-            # Assume Europe/Tallinn offset (+3 summer, +2 winter). We don't
-            # know DST here reliably; emit naive ISO (no offset) — good enough
-            # for sorting & display.
             iso = f"{year:04d}-{month:02d}-{day:02d}T{hour:02d}:{minute:02d}:00"
-            raw = m.group(0)
-            return raw, iso
+            return m.group(0), iso
         except Exception:
             continue
 
-    # Fallback: dateutil's fuzzy parser (English mostly).
     try:
         dt = dateparser.parse(text, fuzzy=True, dayfirst=True)
         return text, dt.isoformat(timespec="minutes")
@@ -176,13 +242,12 @@ def text_of(node: Tag | None) -> str:
 def absolute_url(base: str, href: str | None) -> str | None:
     if not href:
         return None
-    from urllib.parse import urljoin
     return urljoin(base, href)
 
 
 def detect_ticket_status(fragment_text: str) -> str | None:
     t = fragment_text.lower()
-    if any(k in t for k in ["läbi müüdud", "välja müüdud", "välja mü", "välja müüd", "sold out"]):
+    if any(k in t for k in ["läbi müüdud", "välja müüdud", "välja mü", "sold out", "välja mü"]):
         return "sold_out"
     if any(k in t for k in ["vähe pileteid", "viimased piletid", "limited"]):
         return "limited"
@@ -192,151 +257,134 @@ def detect_ticket_status(fragment_text: str) -> str | None:
 
 
 # ---------------------------------------------------------------------------
-# Theater-specific scrapers
+# Generic block-based show extraction
 # ---------------------------------------------------------------------------
-def scrape_draamateater() -> Theater:
-    t = Theater(id="draamateater", name="Eesti Draamateater", source_url="https://www.draamateater.ee/kava")
+def extract_shows_from_html(html: str, theater_id: str, source_url: str) -> list[Show]:
+    soup = BeautifulSoup(html, "lxml")
+    candidates: list[Tag] = []
+    # A "candidate" is any DOM node whose text contains a date-like pattern
+    # AND has a link AND a reasonable size.
+    for tag_name in ("article", "li", "div", "section"):
+        for node in soup.find_all(tag_name):
+            txt = text_of(node)
+            if not txt or len(txt) < 15 or len(txt) > 2500:
+                continue
+            if not any(p.search(txt) for p in DATE_PATTERNS):
+                continue
+            if not node.find("a"):
+                continue
+            candidates.append(node)
+
+    # Favor leaf nodes (don't double-count parent + child wrapping same info)
+    leaves: list[Tag] = []
+    cand_set = set(id(c) for c in candidates)
+    for c in candidates:
+        has_child_candidate = False
+        for d in c.find_all(True):
+            if id(d) in cand_set and d is not c:
+                has_child_candidate = True
+                break
+        if not has_child_candidate:
+            leaves.append(c)
+    log(f"  {theater_id}: {len(candidates)} candidate blocks, {len(leaves)} leaves")
+
+    shows: list[Show] = []
+    seen: set[str] = set()
+    for node in leaves:
+        title_node = node.find(["h1", "h2", "h3", "h4", "h5"])
+        title = text_of(title_node) if title_node else ""
+        if not title:
+            a = node.find("a")
+            title = text_of(a)
+        title = (title or "").strip()
+        if not title or len(title) < 2:
+            continue
+
+        block_text = text_of(node)
+        raw_dt, iso_dt = parse_datetime(block_text)
+        if not raw_dt:
+            continue
+
+        ticket_url: str | None = None
+        detail_url: str | None = None
+        for a in node.find_all("a", href=True):
+            href_raw = a["href"]
+            href_l = href_raw.lower()
+            if "piletilevi" in href_l or "ticketer" in href_l:
+                ticket_url = absolute_url(source_url, href_raw)
+                break
+            atext = (a.get_text() or "").strip().lower()
+            if any(k in atext for k in ["osta", "buy", "pilet", "ticket"]):
+                ticket_url = absolute_url(source_url, href_raw)
+                break
+        if not ticket_url:
+            a = node.find("a", href=True)
+            if a:
+                detail_url = absolute_url(source_url, a["href"])
+
+        show = Show(
+            id=make_show_id(theater_id, title, iso_dt, raw_dt),
+            title=title,
+            datetime_str=raw_dt,
+            iso_datetime=iso_dt,
+            ticket_url=ticket_url or detail_url,
+            ticket_status=detect_ticket_status(block_text),
+        )
+        if show.id in seen:
+            continue
+        seen.add(show.id)
+        shows.append(show)
+
+    return shows
+
+
+# ---------------------------------------------------------------------------
+# Per-theater entrypoints
+# ---------------------------------------------------------------------------
+def scrape_theater(t: Theater) -> Theater:
+    session = new_session()
     try:
-        html = fetch(t.source_url)
-        (RAW / "draamateater.html").write_text(html, encoding="utf-8")
-        soup = BeautifulSoup(html, "lxml")
+        # Step 1: fetch homepage
+        code, home_html = fetch(session, t.homepage, allow_404=True)
+        if code != 200 or not home_html:
+            raise RuntimeError(f"homepage fetch returned {code}")
 
-        # Strategy 1: look for article-like repeating blocks with a
-        # heading and a date-ish string.
-        candidates: list[Tag] = []
-        for tag_name in ("article", "li", "div"):
-            for node in soup.find_all(tag_name):
-                txt = text_of(node)
-                if not txt or len(txt) < 20 or len(txt) > 2000:
-                    continue
-                # Must contain a date-like pattern.
-                if not any(p.search(txt) for p in DATE_PATTERNS):
-                    continue
-                # Must have a link out (ideally ticket or show page).
-                if not node.find("a"):
-                    continue
-                candidates.append(node)
+        (RAW / f"{t.id}_home.html").write_text(home_html, encoding="utf-8")
 
-        log(f"draamateater: {len(candidates)} candidate blocks")
+        # Step 2: discover candidate kava URLs from homepage links.
+        candidates = discover_kava_urls(t.homepage, home_html)
 
-        seen: set[str] = set()
-        for node in candidates:
-            # Title: prefer first heading, else first link text.
-            title_node = node.find(["h1", "h2", "h3", "h4"])
-            title = text_of(title_node) if title_node else ""
-            if not title:
-                a = node.find("a")
-                title = text_of(a)
-            if not title or len(title) < 2:
-                continue
+        # Step 3: try each candidate, pick first that returns 200 with enough body.
+        chosen_url, chosen_html = fetch_first_ok(session, candidates)
 
-            block_text = text_of(node)
-            raw_dt, iso_dt = parse_datetime(block_text)
-            if not raw_dt:
-                continue
+        if not chosen_url:
+            log(f"  {t.id}: no kava candidate worked, using homepage as source")
+            chosen_url = t.homepage
+            chosen_html = home_html
 
-            # Ticket / detail link: prefer piletilevi, else first link.
-            ticket_url: str | None = None
-            for a in node.find_all("a", href=True):
-                href = a["href"]
-                if "piletilevi" in href.lower() or "ticket" in href.lower():
-                    ticket_url = absolute_url(t.source_url, href)
-                    break
-            if not ticket_url:
-                a = node.find("a", href=True)
-                if a:
-                    ticket_url = absolute_url(t.source_url, a["href"])
+        t.source_url = chosen_url
+        (RAW / f"{t.id}_kava.html").write_text(chosen_html or "", encoding="utf-8")
 
-            show = Show(
-                id=make_show_id(t.id, title, iso_dt, raw_dt),
-                title=title,
-                datetime_str=raw_dt,
-                iso_datetime=iso_dt,
-                ticket_url=ticket_url,
-                ticket_status=detect_ticket_status(block_text),
-            )
-            if show.id in seen:
-                continue
-            seen.add(show.id)
-            t.shows.append(show)
+        # Step 4: parse the chosen page for shows
+        shows = extract_shows_from_html(chosen_html, t.id, chosen_url)
 
+        # Also mine the homepage itself — many theater homepages list upcoming
+        # shows on the front page too. Merge by show id.
+        if chosen_url != t.homepage:
+            extra = extract_shows_from_html(home_html, t.id, t.homepage)
+            have = {s.id for s in shows}
+            for s in extra:
+                if s.id not in have:
+                    shows.append(s)
+                    have.add(s.id)
+
+        t.shows = shows
         t.scraped_ok = True
-        log(f"draamateater: extracted {len(t.shows)} shows")
+        log(f"{t.id}: {len(shows)} shows extracted from {chosen_url}")
     except Exception as exc:
         t.scraped_ok = False
         t.error = f"{type(exc).__name__}: {exc}"
-        log(f"draamateater FAILED: {t.error}")
-        log(traceback.format_exc())
-    return t
-
-
-def scrape_linnateater() -> Theater:
-    t = Theater(id="linnateater", name="Tallinna Linnateater", source_url="https://linnateater.ee/kava")
-    try:
-        html = fetch(t.source_url)
-        (RAW / "linnateater.html").write_text(html, encoding="utf-8")
-        soup = BeautifulSoup(html, "lxml")
-
-        candidates: list[Tag] = []
-        for tag_name in ("article", "li", "div"):
-            for node in soup.find_all(tag_name):
-                txt = text_of(node)
-                if not txt or len(txt) < 20 or len(txt) > 2000:
-                    continue
-                if not any(p.search(txt) for p in DATE_PATTERNS):
-                    continue
-                if not node.find("a"):
-                    continue
-                candidates.append(node)
-
-        log(f"linnateater: {len(candidates)} candidate blocks")
-
-        seen: set[str] = set()
-        for node in candidates:
-            title_node = node.find(["h1", "h2", "h3", "h4"])
-            title = text_of(title_node) if title_node else ""
-            if not title:
-                a = node.find("a")
-                title = text_of(a)
-            if not title or len(title) < 2:
-                continue
-
-            block_text = text_of(node)
-            raw_dt, iso_dt = parse_datetime(block_text)
-            if not raw_dt:
-                continue
-
-            ticket_url: str | None = None
-            for a in node.find_all("a", href=True):
-                href = a["href"]
-                href_l = href.lower()
-                if "piletilevi" in href_l or "osta" in href_l or "ticket" in href_l:
-                    ticket_url = absolute_url(t.source_url, href)
-                    break
-            if not ticket_url:
-                a = node.find("a", href=True)
-                if a:
-                    ticket_url = absolute_url(t.source_url, a["href"])
-
-            show = Show(
-                id=make_show_id(t.id, title, iso_dt, raw_dt),
-                title=title,
-                datetime_str=raw_dt,
-                iso_datetime=iso_dt,
-                ticket_url=ticket_url,
-                ticket_status=detect_ticket_status(block_text),
-            )
-            if show.id in seen:
-                continue
-            seen.add(show.id)
-            t.shows.append(show)
-
-        t.scraped_ok = True
-        log(f"linnateater: extracted {len(t.shows)} shows")
-    except Exception as exc:
-        t.scraped_ok = False
-        t.error = f"{type(exc).__name__}: {exc}"
-        log(f"linnateater FAILED: {t.error}")
+        log(f"{t.id} FAILED: {t.error}")
         log(traceback.format_exc())
     return t
 
@@ -348,8 +396,16 @@ def main() -> int:
     log(f"scraper v{SCRAPER_VERSION} starting")
 
     theaters = [
-        scrape_draamateater(),
-        scrape_linnateater(),
+        scrape_theater(Theater(
+            id="draamateater",
+            name="Eesti Draamateater",
+            homepage="https://www.draamateater.ee/",
+        )),
+        scrape_theater(Theater(
+            id="linnateater",
+            name="Tallinna Linnateater",
+            homepage="https://linnateater.ee/",
+        )),
     ]
 
     state: dict[str, Any] = {
@@ -359,7 +415,8 @@ def main() -> int:
             {
                 "id": t.id,
                 "name": t.name,
-                "source_url": t.source_url,
+                "homepage": t.homepage,
+                "source_url": t.source_url or t.homepage,
                 "scraped_ok": t.scraped_ok,
                 "error": t.error,
                 "shows": [asdict(s) for s in sorted(t.shows, key=lambda s: (s.iso_datetime or "9999", s.title))],
@@ -369,12 +426,16 @@ def main() -> int:
     }
 
     (DATA / "state.json").write_text(json.dumps(state, ensure_ascii=False, indent=2), encoding="utf-8")
-    log(f"wrote data/state.json — draamateater={len(theaters[0].shows)}, linnateater={len(theaters[1].shows)}")
+    log(
+        "wrote data/state.json — "
+        f"draamateater={len(theaters[0].shows)} ok={theaters[0].scraped_ok}, "
+        f"linnateater={len(theaters[1].shows)} ok={theaters[1].scraped_ok}"
+    )
 
     (DATA / "log.txt").write_text("\n".join(_log_lines), encoding="utf-8")
 
-    # Exit non-zero only if BOTH theaters failed — otherwise partial data is
-    # still useful and we want the commit to happen.
+    # Exit non-zero ONLY if every theater failed both homepage and discovery —
+    # we still want successful partial scrapes to commit.
     if not any(t.scraped_ok for t in theaters):
         log("both theaters failed — exiting non-zero")
         return 1
