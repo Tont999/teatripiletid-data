@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-04-24T06:10:03+00:00",
+  "generated_at": "2026-04-25T05:49:57+00:00",
   "scraper_version": "1.1.0",
   "theaters": [
     {
@@ -21,22 +21,22 @@
           "price_range": null
         },
         {
-          "id": "draamateater:t-na-13-aprillil-j-b-ra-kunsti-etendus:2026-04-13T00:00:00",
-          "title": "Täna, 13. aprillil jääb ära „Kunsti“ etendus",
-          "datetime_str": "13.04.2026",
-          "iso_datetime": "2026-04-13T00:00:00",
-          "venue": null,
-          "ticket_url": "https://www.draamateater.ee/uudis/tana-13-aprillil-jaab-ara-kunsti-etendus",
-          "ticket_status": "available",
-          "price_range": null
-        },
-        {
           "id": "draamateater:ilmus-draamateatri-ajalehe-kevadnumber-2026:2026-04-15T00:00:00",
           "title": "Ilmus Draamateatri ajalehe kevadnumber 2026",
           "datetime_str": "15.04.2026",
           "iso_datetime": "2026-04-15T00:00:00",
           "venue": null,
           "ticket_url": "https://www.draamateater.ee/uudis/ilmus-draamateatri-ajalehe-kevadnumber-2026",
+          "ticket_status": null,
+          "price_range": null
+        },
+        {
+          "id": "draamateater:esimesele-lugemisele-tulevad-noorte-dramaturgide-diplomit-d:2026-04-24T00:00:00",
+          "title": "Esimesele lugemisele tulevad noorte dramaturgide diplomitööd",
+          "datetime_str": "24.04.2026",
+          "iso_datetime": "2026-04-24T00:00:00",
+          "venue": null,
+          "ticket_url": "https://www.draamateater.ee/uudis/esimesele-lugemisele-tulevad-noorte-dramaturgide-diplomitood",
           "ticket_status": null,
           "price_range": null
         }
