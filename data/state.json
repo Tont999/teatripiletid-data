@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-09T06:19:17+00:00",
+  "generated_at": "2026-05-10T06:35:18+00:00",
   "scraper_version": "1.1.0",
   "theaters": [
     {
@@ -107,6 +107,16 @@
           "iso_datetime": "2026-05-08T00:00:00",
           "venue": null,
           "ticket_url": "https://linnateater.ee/lembit-peterson-toob-suures-saalis-valja-hispaania-kuldajastu-tahtteose/",
+          "ticket_status": null,
+          "price_range": null
+        },
+        {
+          "id": "linnateater:lahkus-rein-neimar:2026-05-09T00:00:00",
+          "title": "Lahkus Rein Neimar",
+          "datetime_str": "09.05.2026",
+          "iso_datetime": "2026-05-09T00:00:00",
+          "venue": null,
+          "ticket_url": "https://linnateater.ee/lahkus-rein-neimar/",
           "ticket_status": null,
           "price_range": null
         },
