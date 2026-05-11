@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-10T06:35:18+00:00",
+  "generated_at": "2026-05-11T07:47:30+00:00",
   "scraper_version": "1.1.0",
   "theaters": [
     {
@@ -50,26 +50,6 @@
       "scraped_ok": true,
       "error": null,
       "shows": [
-        {
-          "id": "linnateater:linnateatri-mustas-saalis-esietendub-marta-aliide-jakovski-l:2026-04-10T00:00:00",
-          "title": "Linnateatri Mustas saalis esietendub Marta Aliide Jakovski lavastus „Sinisilmsed“",
-          "datetime_str": "10.04.2026",
-          "iso_datetime": "2026-04-10T00:00:00",
-          "venue": null,
-          "ticket_url": "https://linnateater.ee/linnateatri-mustas-saalis-esietendub-marta-aliide-jakovski-lavastus-sinisilmsed/",
-          "ticket_status": null,
-          "price_range": null
-        },
-        {
-          "id": "linnateater:tallinna-linnateater-otsib-helitehnikut:2026-04-10T00:00:00",
-          "title": "Tallinna Linnateater otsib helitehnikut!",
-          "datetime_str": "10.04.2026",
-          "iso_datetime": "2026-04-10T00:00:00",
-          "venue": null,
-          "ticket_url": "https://linnateater.ee/tallinna-linnateater-otsib-helitehnikut/",
-          "ticket_status": null,
-          "price_range": null
-        },
         {
           "id": "linnateater:leida-rammo-fondi-stipendiumi-p-lvis-maiken-pius:2026-04-16T00:00:00",
           "title": "Leida Rammo fondi stipendiumi pälvis Maiken Pius",
