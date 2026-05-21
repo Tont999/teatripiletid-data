@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-05-20T07:49:45+00:00",
+  "generated_at": "2026-05-21T07:57:08+00:00",
   "scraper_version": "1.1.0",
   "theaters": [
     {
@@ -16,7 +16,7 @@
           "datetime_str": "08.05.2026",
           "iso_datetime": "2026-05-08T00:00:00",
           "venue": null,
-          "ticket_url": "https://www.draamateater.ee/uudis/kuningas-ubu-lopetab-kohtumised-trupiga-noorteohtu-sooduspiletid",
+          "ticket_url": "https://www.draamateater.ee/uudis/kuningas-ubu-lopetab-kohtumised-trupiga-noorteohtu-sooduspiletid/",
           "ticket_status": "available",
           "price_range": null
         },
@@ -26,7 +26,7 @@
           "datetime_str": "15.05.2026",
           "iso_datetime": "2026-05-15T00:00:00",
           "venue": null,
-          "ticket_url": "https://www.draamateater.ee/uudis/18-mail-algab-septembri-ja-oktoobri-etenduste-piletimuuk",
+          "ticket_url": "https://www.draamateater.ee/uudis/18-mail-algab-septembri-ja-oktoobri-etenduste-piletimuuk/",
           "ticket_status": "available",
           "price_range": null
         },
@@ -36,7 +36,7 @@
           "datetime_str": "18.30",
           "iso_datetime": "2026-30-18T00:00:00",
           "venue": null,
-          "ticket_url": "https://www.draamateater.ee/uudis/rahamaa-lisaetendused-riias",
+          "ticket_url": "https://www.draamateater.ee/uudis/rahamaa-lisaetendused-riias/",
           "ticket_status": null,
           "price_range": null
         }
