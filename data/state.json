@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-11T08:48:21+00:00",
+  "generated_at": "2026-06-13T07:50:45+00:00",
   "scraper_version": "1.1.0",
   "theaters": [
     {
@@ -101,13 +101,23 @@
           "price_range": null
         },
         {
-          "id": "linnateater:t-helepanu:2027-00-11T00:00:00",
-          "title": "Tähelepanu!",
+          "id": "linnateater:augusti-septembri-ja-oktoobri-etendused-tulevad-m-ki-15-juun:2027-00-11T00:00:00",
+          "title": "Augusti, septembri ja oktoobri etendused tulevad müüki 15. juunil kell 11.00!",
           "datetime_str": "11.00",
           "iso_datetime": "2027-00-11T00:00:00",
           "venue": null,
           "ticket_url": "https://linnateater.ee/mangukava/",
           "ticket_status": "available",
+          "price_range": null
+        },
+        {
+          "id": "linnateater:t-helepanu:2027-00-11T15:00:00",
+          "title": "Tähelepanu!",
+          "datetime_str": "11.00–15.00",
+          "iso_datetime": "2027-00-11T15:00:00",
+          "venue": null,
+          "ticket_url": "https://linnateater.ee/linnateatri-suveplaanid/",
+          "ticket_status": null,
           "price_range": null
         },
         {
