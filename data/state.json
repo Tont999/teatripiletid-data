@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-06-26T07:56:17+00:00",
+  "generated_at": "2026-06-27T06:54:43+00:00",
   "scraper_version": "1.1.0",
   "theaters": [
     {
@@ -10,16 +10,6 @@
       "scraped_ok": true,
       "error": null,
       "shows": [
-        {
-          "id": "draamateater:kuningas-ubu-l-petab-kohtumised-trupiga-noorte-htu-sooduspil:2026-05-08T00:00:00",
-          "title": "„Kuningas Ubu“ lõpetab: kohtumised trupiga, noorteõhtu, sooduspiletid",
-          "datetime_str": "08.05.2026",
-          "iso_datetime": "2026-05-08T00:00:00",
-          "venue": null,
-          "ticket_url": "https://www.draamateater.ee/uudis/kuningas-ubu-lopetab-kohtumised-trupiga-noorteohtu-sooduspiletid/",
-          "ticket_status": "available",
-          "price_range": null
-        },
         {
           "id": "draamateater:18-mail-algab-septembri-ja-oktoobri-etenduste-piletim-k:2026-05-15T00:00:00",
           "title": "18. mail algab septembri ja oktoobri etenduste piletimüük",
@@ -37,6 +27,16 @@
           "iso_datetime": "2026-06-01T00:00:00",
           "venue": null,
           "ticket_url": "https://www.draamateater.ee/uudis/uks-helevalge-tuvi-augustikuu-etendused-tanasest-muugis/",
+          "ticket_status": null,
+          "price_range": null
+        },
+        {
+          "id": "draamateater:kassa-suvepuhkusel:2026-06-20T00:00:00",
+          "title": "Kassa suvepuhkusel",
+          "datetime_str": "20.06.2026",
+          "iso_datetime": "2026-06-20T00:00:00",
+          "venue": null,
+          "ticket_url": "https://www.draamateater.ee/uudis/kassa-suvepuhkusel/",
           "ticket_status": null,
           "price_range": null
         }
