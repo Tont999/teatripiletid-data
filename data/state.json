@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-12T05:38:51+00:00",
+  "generated_at": "2026-08-13T05:41:39+00:00",
   "scraper_version": "1.1.0",
   "theaters": [
     {
@@ -10,16 +10,6 @@
       "scraped_ok": true,
       "error": null,
       "shows": [
-        {
-          "id": "draamateater:18-mail-algab-septembri-ja-oktoobri-etenduste-piletim-k:2026-05-15T00:00:00",
-          "title": "18. mail algab septembri ja oktoobri etenduste piletimüük",
-          "datetime_str": "15.05.2026",
-          "iso_datetime": "2026-05-15T00:00:00",
-          "venue": null,
-          "ticket_url": "https://www.draamateater.ee/uudis/18-mail-algab-septembri-ja-oktoobri-etenduste-piletimuuk/",
-          "ticket_status": "available",
-          "price_range": null
-        },
         {
           "id": "draamateater:ks-helevalge-tuvi-augustikuu-etendused-t-nasest-m-gis:2026-06-01T00:00:00",
           "title": "„Üks helevalge tuvi“ – augustikuu etendused tänasest müügis",
@@ -37,6 +27,16 @@
           "iso_datetime": "2026-06-20T00:00:00",
           "venue": null,
           "ticket_url": "https://www.draamateater.ee/uudis/kassa-suvepuhkusel/",
+          "ticket_status": null,
+          "price_range": null
+        },
+        {
+          "id": "draamateater:rahamaa-kogus-tamperes-liv-rdeid:2026-08-12T00:00:00",
+          "title": "„Rahamaa“ kogus Tamperes ülivõrdeid",
+          "datetime_str": "12.08.2026",
+          "iso_datetime": "2026-08-12T00:00:00",
+          "venue": null,
+          "ticket_url": "https://www.draamateater.ee/uudis/rahamaa-kogus-tamperes-ulivordeid/",
           "ticket_status": null,
           "price_range": null
         }
