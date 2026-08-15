@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-14T05:39:07+00:00",
+  "generated_at": "2026-08-15T04:33:54+00:00",
   "scraper_version": "1.1.0",
   "theaters": [
     {
@@ -61,16 +61,6 @@
           "price_range": null
         },
         {
-          "id": "linnateater:lahkus-rein-neimar:2026-05-09T00:00:00",
-          "title": "Lahkus Rein Neimar",
-          "datetime_str": "09.05.2026",
-          "iso_datetime": "2026-05-09T00:00:00",
-          "venue": null,
-          "ticket_url": "https://linnateater.ee/lahkus-rein-neimar/",
-          "ticket_status": null,
-          "price_range": null
-        },
-        {
           "id": "linnateater:kuula-sinisilmsete-vestlusringi-salvestust:2026-05-21T00:00:00",
           "title": "Kuula „Sinisilmsete” vestlusringi salvestust!",
           "datetime_str": "21.05.2026",
@@ -97,6 +87,16 @@
           "iso_datetime": "2026-06-10T00:00:00",
           "venue": null,
           "ticket_url": "https://linnateater.ee/linnateatri-suveplaanid/",
+          "ticket_status": null,
+          "price_range": null
+        },
+        {
+          "id": "linnateater:ootame-noori-linnateatri-dramaturgiaringi-stseen:2026-08-14T00:00:00",
+          "title": "Ootame noori Linnateatri dramaturgiaringi „Stseen”!",
+          "datetime_str": "14.08.2026",
+          "iso_datetime": "2026-08-14T00:00:00",
+          "venue": null,
+          "ticket_url": "https://linnateater.ee/ootame-noori-linnateatri-dramaturgiaringi-stseen/",
           "ticket_status": null,
           "price_range": null
         },
