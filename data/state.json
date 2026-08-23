@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-22T04:34:50+00:00",
+  "generated_at": "2026-08-23T04:39:41+00:00",
   "scraper_version": "1.1.0",
   "theaters": [
     {
@@ -10,16 +10,6 @@
       "scraped_ok": true,
       "error": null,
       "shows": [
-        {
-          "id": "draamateater:kassa-suvepuhkusel:2026-06-20T00:00:00",
-          "title": "Kassa suvepuhkusel",
-          "datetime_str": "20.06.2026",
-          "iso_datetime": "2026-06-20T00:00:00",
-          "venue": null,
-          "ticket_url": "https://www.draamateater.ee/uudis/kassa-suvepuhkusel/",
-          "ticket_status": null,
-          "price_range": null
-        },
         {
           "id": "draamateater:rahamaa-kogus-tamperes-liv-rdeid:2026-08-12T00:00:00",
           "title": "„Rahamaa“ kogus Tamperes ülivõrdeid",
@@ -37,6 +27,16 @@
           "iso_datetime": "2026-08-19T00:00:00",
           "venue": null,
           "ticket_url": "https://www.draamateater.ee/uudis/noorelt-teatrisse-jatkub-alanud-hooajal/",
+          "ticket_status": null,
+          "price_range": null
+        },
+        {
+          "id": "draamateater:loe-edasi:2026-09-24T06:10:00",
+          "title": "Loe edasi",
+          "datetime_str": "24.09, 06.10",
+          "iso_datetime": "2026-09-24T06:10:00",
+          "venue": null,
+          "ticket_url": "https://www.draamateater.ee/uudis/lehman-brothersi-lisaetendused-tulevad-muuki-24-augustil/",
           "ticket_status": null,
           "price_range": null
         }
