@@ -1,18 +1,18 @@
-[2026-08-23T04:39:39+00:00] scraper v1.1.0 starting
-[2026-08-23T04:39:39+00:00] GET https://www.draamateater.ee/
-[2026-08-23T04:39:40+00:00]   -> 200, final url https://www.draamateater.ee/, 79840 bytes
-[2026-08-23T04:39:40+00:00]   kava candidates: ['https://www.draamateater.ee/repertuaar/', 'https://www.draamateater.ee/mangukava/', 'https://www.draamateater.ee/uudis/lehman-brothersi-lisaetendused-tulevad-muuki-24-augustil/', 'https://www.draamateater.ee/arhiiv/', 'https://www.draamateater.ee/lavastus/rahamaa/', 'https://www.draamateater.ee/lavastus/uks-helevalge-tuvi/']
-[2026-08-23T04:39:40+00:00] GET https://www.draamateater.ee/repertuaar/
-[2026-08-23T04:39:40+00:00]   -> 200, final url https://www.draamateater.ee/repertuaar/, 70945 bytes
-[2026-08-23T04:39:40+00:00]   draamateater: 0 candidate blocks, 0 leaves
-[2026-08-23T04:39:40+00:00]   draamateater: 5 candidate blocks, 3 leaves
-[2026-08-23T04:39:40+00:00] draamateater: 3 shows extracted from https://www.draamateater.ee/repertuaar/
-[2026-08-23T04:39:40+00:00] GET https://linnateater.ee/
-[2026-08-23T04:39:41+00:00]   -> 200, final url https://linnateater.ee/, 266122 bytes
-[2026-08-23T04:39:41+00:00]   kava candidates: ['https://linnateater.ee/mangukava/', 'https://linnateater.ee/lavastused/', 'http://linnateater.ee/lavastused/', 'https://linnateater.ee/arhiiv/', 'https://linnateater.ee/raamaturiiul-valjaanded/repertuaariraamat/', 'https://linnateater.ee/lavastused/oo/']
-[2026-08-23T04:39:41+00:00] GET https://linnateater.ee/mangukava/
-[2026-08-23T04:39:41+00:00]   -> 200, final url https://linnateater.ee/mangukava/, 215473 bytes
-[2026-08-23T04:39:41+00:00]   linnateater: 24 candidate blocks, 5 leaves
-[2026-08-23T04:39:41+00:00]   linnateater: 31 candidate blocks, 10 leaves
-[2026-08-23T04:39:41+00:00] linnateater: 7 shows extracted from https://linnateater.ee/mangukava/
-[2026-08-23T04:39:41+00:00] wrote data/state.json — draamateater=3 ok=True, linnateater=7 ok=True
+[2026-08-24T04:47:49+00:00] scraper v1.1.0 starting
+[2026-08-24T04:47:49+00:00] GET https://www.draamateater.ee/
+[2026-08-24T04:47:50+00:00]   -> 200, final url https://www.draamateater.ee/, 79840 bytes
+[2026-08-24T04:47:50+00:00]   kava candidates: ['https://www.draamateater.ee/repertuaar/', 'https://www.draamateater.ee/mangukava/', 'https://www.draamateater.ee/uudis/lehman-brothersi-lisaetendused-tulevad-muuki-24-augustil/', 'https://www.draamateater.ee/arhiiv/', 'https://www.draamateater.ee/lavastus/rahamaa/', 'https://www.draamateater.ee/lavastus/uks-helevalge-tuvi/']
+[2026-08-24T04:47:50+00:00] GET https://www.draamateater.ee/repertuaar/
+[2026-08-24T04:47:50+00:00]   -> 200, final url https://www.draamateater.ee/repertuaar/, 70945 bytes
+[2026-08-24T04:47:50+00:00]   draamateater: 0 candidate blocks, 0 leaves
+[2026-08-24T04:47:50+00:00]   draamateater: 5 candidate blocks, 3 leaves
+[2026-08-24T04:47:50+00:00] draamateater: 3 shows extracted from https://www.draamateater.ee/repertuaar/
+[2026-08-24T04:47:50+00:00] GET https://linnateater.ee/
+[2026-08-24T04:47:52+00:00]   -> 200, final url https://linnateater.ee/, 266122 bytes
+[2026-08-24T04:47:52+00:00]   kava candidates: ['https://linnateater.ee/mangukava/', 'https://linnateater.ee/lavastused/', 'http://linnateater.ee/lavastused/', 'https://linnateater.ee/arhiiv/', 'https://linnateater.ee/raamaturiiul-valjaanded/repertuaariraamat/', 'https://linnateater.ee/lavastused/oo/']
+[2026-08-24T04:47:52+00:00] GET https://linnateater.ee/mangukava/
+[2026-08-24T04:47:52+00:00]   -> 200, final url https://linnateater.ee/mangukava/, 215473 bytes
+[2026-08-24T04:47:52+00:00]   linnateater: 24 candidate blocks, 5 leaves
+[2026-08-24T04:47:52+00:00]   linnateater: 31 candidate blocks, 10 leaves
+[2026-08-24T04:47:52+00:00] linnateater: 7 shows extracted from https://linnateater.ee/mangukava/
+[2026-08-24T04:47:52+00:00] wrote data/state.json — draamateater=3 ok=True, linnateater=7 ok=True
