@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-08-26T04:41:40+00:00",
+  "generated_at": "2026-08-27T15:02:41+00:00",
   "scraper_version": "1.1.0",
   "theaters": [
     {
@@ -51,36 +51,6 @@
       "error": null,
       "shows": [
         {
-          "id": "linnateater:lembit-peterson-toob-suures-saalis-v-lja-hispaania-kuldajast:2026-05-08T00:00:00",
-          "title": "Lembit Peterson toob Suures saalis välja Hispaania kuldajastu tähtteose",
-          "datetime_str": "08.05.2026",
-          "iso_datetime": "2026-05-08T00:00:00",
-          "venue": null,
-          "ticket_url": "https://linnateater.ee/lembit-peterson-toob-suures-saalis-valja-hispaania-kuldajastu-tahtteose/",
-          "ticket_status": null,
-          "price_range": null
-        },
-        {
-          "id": "linnateater:kuula-sinisilmsete-vestlusringi-salvestust:2026-05-21T00:00:00",
-          "title": "Kuula „Sinisilmsete” vestlusringi salvestust!",
-          "datetime_str": "21.05.2026",
-          "iso_datetime": "2026-05-21T00:00:00",
-          "venue": null,
-          "ticket_url": "https://linnateater.ee/kuula-sinisilmsete-vestlusringi-salvestust/",
-          "ticket_status": null,
-          "price_range": null
-        },
-        {
-          "id": "linnateater:kassa-suvised-lahtiolekuajad:2026-06-09T00:00:00",
-          "title": "Kassa suvised lahtiolekuajad",
-          "datetime_str": "09.06.2026",
-          "iso_datetime": "2026-06-09T00:00:00",
-          "venue": null,
-          "ticket_url": "https://linnateater.ee/kassa-suvised-lahtiolekuajad/",
-          "ticket_status": null,
-          "price_range": null
-        },
-        {
           "id": "linnateater:linnateatri-suveplaanid:2026-06-10T00:00:00",
           "title": "Linnateatri suveplaanid",
           "datetime_str": "10.06.2026",
@@ -107,6 +77,26 @@
           "iso_datetime": "2026-08-18T00:00:00",
           "venue": null,
           "ticket_url": "https://linnateater.ee/18-augusti-etendus-toeline-laas-jaab-ara/",
+          "ticket_status": null,
+          "price_range": null
+        },
+        {
+          "id": "linnateater:18-ja-19-septembri-iphigeneia-agamemnon-elektra-etendused-j-:2026-08-26T00:00:00",
+          "title": "18. ja 19. septembri “Iphigeneia. Agamemnon. Elektra.” etendused jäävad ära!",
+          "datetime_str": "26.08.2026",
+          "iso_datetime": "2026-08-26T00:00:00",
+          "venue": null,
+          "ticket_url": "https://linnateater.ee/18-ja-19-septembri-iphigeneia-agamemnon-elektra-etendused-jaavad-ara/",
+          "ticket_status": null,
+          "price_range": null
+        },
+        {
+          "id": "linnateater:noorte-teatri-htu-linnateatris:2026-08-27T00:00:00",
+          "title": "Noorte teatriõhtu Linnateatris!",
+          "datetime_str": "27.08.2026",
+          "iso_datetime": "2026-08-27T00:00:00",
+          "venue": null,
+          "ticket_url": "https://linnateater.ee/noorte-teatriohtu-linnateatris/",
           "ticket_status": null,
           "price_range": null
         },
