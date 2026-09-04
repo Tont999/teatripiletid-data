@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-03T08:41:55+00:00",
+  "generated_at": "2026-09-04T08:36:56+00:00",
   "scraper_version": "1.1.0",
   "theaters": [
     {
@@ -11,22 +11,22 @@
       "error": null,
       "shows": [
         {
-          "id": "draamateater:rahamaa-kogus-tamperes-liv-rdeid:2026-08-12T00:00:00",
-          "title": "„Rahamaa“ kogus Tamperes ülivõrdeid",
-          "datetime_str": "12.08.2026",
-          "iso_datetime": "2026-08-12T00:00:00",
-          "venue": null,
-          "ticket_url": "https://www.draamateater.ee/uudis/rahamaa-kogus-tamperes-ulivordeid/",
-          "ticket_status": null,
-          "price_range": null
-        },
-        {
           "id": "draamateater:noorelt-teatrisse-j-tkub-alanud-hooajal:2026-08-19T00:00:00",
           "title": "„Noorelt teatrisse!“ jätkub alanud hooajal",
           "datetime_str": "19.08.2026",
           "iso_datetime": "2026-08-19T00:00:00",
           "venue": null,
           "ticket_url": "https://www.draamateater.ee/uudis/noorelt-teatrisse-jatkub-alanud-hooajal/",
+          "ticket_status": null,
+          "price_range": null
+        },
+        {
+          "id": "draamateater:alexela-tugi-toob-noored-ka-uuel-hooajal-soodsamalt-draamate:2026-09-04T00:00:00",
+          "title": "Alexela tugi toob noored ka uuel hooajal soodsamalt Draamateatri saali",
+          "datetime_str": "04.09.2026",
+          "iso_datetime": "2026-09-04T00:00:00",
+          "venue": null,
+          "ticket_url": "https://www.draamateater.ee/uudis/alexela-tugi-toob-noored-ka-uuel-hooajal-soodsamalt-draamateatri-saali/",
           "ticket_status": null,
           "price_range": null
         },
