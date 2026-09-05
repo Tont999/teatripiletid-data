@@ -1,18 +1,18 @@
-[2026-09-04T08:36:53+00:00] scraper v1.1.0 starting
-[2026-09-04T08:36:53+00:00] GET https://www.draamateater.ee/
-[2026-09-04T08:36:54+00:00]   -> 200, final url https://www.draamateater.ee/, 84613 bytes
-[2026-09-04T08:36:54+00:00]   kava candidates: ['https://www.draamateater.ee/repertuaar/', 'https://www.draamateater.ee/mangukava/', 'https://www.draamateater.ee/uudis/lehman-brothersi-lisaetendused-tulevad-muuki-24-augustil/', 'https://www.draamateater.ee/arhiiv/', 'https://www.draamateater.ee/lavastus/rahamaa/', 'https://www.draamateater.ee/lavastus/prima-facie/']
-[2026-09-04T08:36:54+00:00] GET https://www.draamateater.ee/repertuaar/
-[2026-09-04T08:36:55+00:00]   -> 200, final url https://www.draamateater.ee/repertuaar/, 70807 bytes
-[2026-09-04T08:36:55+00:00]   draamateater: 0 candidate blocks, 0 leaves
-[2026-09-04T08:36:55+00:00]   draamateater: 5 candidate blocks, 3 leaves
-[2026-09-04T08:36:55+00:00] draamateater: 3 shows extracted from https://www.draamateater.ee/repertuaar/
-[2026-09-04T08:36:55+00:00] GET https://linnateater.ee/
-[2026-09-04T08:36:56+00:00]   -> 200, final url https://linnateater.ee/, 265708 bytes
-[2026-09-04T08:36:56+00:00]   kava candidates: ['https://linnateater.ee/mangukava/', 'https://linnateater.ee/lavastused/', 'https://linnateater.ee/18-ja-19-septembri-iphigeneia-agamemnon-elektra-etendused-jaavad-ara/', 'http://linnateater.ee/lavastused/', 'https://linnateater.ee/arhiiv/', 'https://linnateater.ee/raamaturiiul-valjaanded/repertuaariraamat/']
-[2026-09-04T08:36:56+00:00] GET https://linnateater.ee/mangukava/
-[2026-09-04T08:36:56+00:00]   -> 200, final url https://linnateater.ee/mangukava/, 215476 bytes
-[2026-09-04T08:36:56+00:00]   linnateater: 24 candidate blocks, 5 leaves
-[2026-09-04T08:36:56+00:00]   linnateater: 30 candidate blocks, 9 leaves
-[2026-09-04T08:36:56+00:00] linnateater: 6 shows extracted from https://linnateater.ee/mangukava/
-[2026-09-04T08:36:56+00:00] wrote data/state.json — draamateater=3 ok=True, linnateater=6 ok=True
+[2026-09-05T08:10:15+00:00] scraper v1.1.0 starting
+[2026-09-05T08:10:15+00:00] GET https://www.draamateater.ee/
+[2026-09-05T08:10:16+00:00]   -> 200, final url https://www.draamateater.ee/, 84534 bytes
+[2026-09-05T08:10:16+00:00]   kava candidates: ['https://www.draamateater.ee/repertuaar/', 'https://www.draamateater.ee/mangukava/', 'https://www.draamateater.ee/uudis/lehman-brothersi-lisaetendused-tulevad-muuki-24-augustil/', 'https://www.draamateater.ee/arhiiv/', 'https://www.draamateater.ee/lavastus/rahamaa/', 'https://www.draamateater.ee/lavastus/prima-facie/']
+[2026-09-05T08:10:16+00:00] GET https://www.draamateater.ee/repertuaar/
+[2026-09-05T08:10:16+00:00]   -> 200, final url https://www.draamateater.ee/repertuaar/, 70807 bytes
+[2026-09-05T08:10:16+00:00]   draamateater: 0 candidate blocks, 0 leaves
+[2026-09-05T08:10:16+00:00]   draamateater: 5 candidate blocks, 3 leaves
+[2026-09-05T08:10:16+00:00] draamateater: 3 shows extracted from https://www.draamateater.ee/repertuaar/
+[2026-09-05T08:10:16+00:00] GET https://linnateater.ee/
+[2026-09-05T08:10:17+00:00]   -> 200, final url https://linnateater.ee/, 265847 bytes
+[2026-09-05T08:10:17+00:00]   kava candidates: ['https://linnateater.ee/mangukava/', 'https://linnateater.ee/lavastused/', 'https://linnateater.ee/18-ja-19-septembri-iphigeneia-agamemnon-elektra-etendused-jaavad-ara/', 'http://linnateater.ee/lavastused/', 'https://linnateater.ee/arhiiv/', 'https://linnateater.ee/raamaturiiul-valjaanded/repertuaariraamat/']
+[2026-09-05T08:10:17+00:00] GET https://linnateater.ee/mangukava/
+[2026-09-05T08:10:17+00:00]   -> 200, final url https://linnateater.ee/mangukava/, 215935 bytes
+[2026-09-05T08:10:17+00:00]   linnateater: 24 candidate blocks, 5 leaves
+[2026-09-05T08:10:17+00:00]   linnateater: 30 candidate blocks, 9 leaves
+[2026-09-05T08:10:17+00:00] linnateater: 6 shows extracted from https://linnateater.ee/mangukava/
+[2026-09-05T08:10:17+00:00] wrote data/state.json — draamateater=3 ok=True, linnateater=6 ok=True
