@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-10T08:45:55+00:00",
+  "generated_at": "2026-09-11T08:43:53+00:00",
   "scraper_version": "1.1.0",
   "theaters": [
     {
@@ -51,16 +51,6 @@
       "error": null,
       "shows": [
         {
-          "id": "linnateater:linnateatri-suveplaanid:2026-06-10T00:00:00",
-          "title": "Linnateatri suveplaanid",
-          "datetime_str": "10.06.2026",
-          "iso_datetime": "2026-06-10T00:00:00",
-          "venue": null,
-          "ticket_url": "https://linnateater.ee/linnateatri-suveplaanid/",
-          "ticket_status": null,
-          "price_range": null
-        },
-        {
           "id": "linnateater:ootame-noori-linnateatri-dramaturgiaringi-stseen:2026-08-14T00:00:00",
           "title": "Ootame noori Linnateatri dramaturgiaringi „Stseen”!",
           "datetime_str": "14.08.2026",
@@ -97,6 +87,16 @@
           "iso_datetime": "2026-08-27T00:00:00",
           "venue": null,
           "ticket_url": "https://linnateater.ee/noorte-teatriohtu-linnateatris/",
+          "ticket_status": null,
+          "price_range": null
+        },
+        {
+          "id": "linnateater:tallinna-linnateater-kirjandust-nava-festivalil:2026-09-11T00:00:00",
+          "title": "Tallinna Linnateater Kirjandustänava festivalil",
+          "datetime_str": "11.09.2026",
+          "iso_datetime": "2026-09-11T00:00:00",
+          "venue": null,
+          "ticket_url": "https://linnateater.ee/tallinna-linnateater-kirjandustanava-festivalil/",
           "ticket_status": null,
           "price_range": null
         },
