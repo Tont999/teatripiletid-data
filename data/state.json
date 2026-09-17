@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-16T09:09:45+00:00",
+  "generated_at": "2026-09-17T09:18:01+00:00",
   "scraper_version": "1.1.0",
   "theaters": [
     {
@@ -51,16 +51,6 @@
       "error": null,
       "shows": [
         {
-          "id": "linnateater:ootame-noori-linnateatri-dramaturgiaringi-stseen:2026-08-14T00:00:00",
-          "title": "Ootame noori Linnateatri dramaturgiaringi „Stseen”!",
-          "datetime_str": "14.08.2026",
-          "iso_datetime": "2026-08-14T00:00:00",
-          "venue": null,
-          "ticket_url": "https://linnateater.ee/ootame-noori-linnateatri-dramaturgiaringi-stseen/",
-          "ticket_status": null,
-          "price_range": null
-        },
-        {
           "id": "linnateater:18-augusti-etendus-t-eline-l-s-j-b-ra:2026-08-18T00:00:00",
           "title": "18. augusti etendus “Tõeline lääs” jääb ära!",
           "datetime_str": "18.08.2026",
@@ -97,6 +87,16 @@
           "iso_datetime": "2026-09-11T00:00:00",
           "venue": null,
           "ticket_url": "https://linnateater.ee/tallinna-linnateater-kirjandustanava-festivalil/",
+          "ticket_status": null,
+          "price_range": null
+        },
+        {
+          "id": "linnateater:petajate-info-ritus-tallinna-linnateatris:2026-09-16T00:00:00",
+          "title": "Õpetajate infoüritus Tallinna Linnateatris",
+          "datetime_str": "16.09.2026",
+          "iso_datetime": "2026-09-16T00:00:00",
+          "venue": null,
+          "ticket_url": "https://linnateater.ee/opetajate-infouritus-tallinna-linnateatris/",
           "ticket_status": null,
           "price_range": null
         },
