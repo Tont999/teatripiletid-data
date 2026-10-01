@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-30T10:20:32+00:00",
+  "generated_at": "2026-10-01T10:47:17+00:00",
   "scraper_version": "1.1.0",
   "theaters": [
     {
@@ -11,12 +11,12 @@
       "error": null,
       "shows": [
         {
-          "id": "draamateater:alexela-tugi-toob-noored-ka-uuel-hooajal-soodsamalt-draamate:2026-09-04T00:00:00",
-          "title": "Alexela tugi toob noored ka uuel hooajal soodsamalt Draamateatri saali",
-          "datetime_str": "04.09.2026",
-          "iso_datetime": "2026-09-04T00:00:00",
+          "id": "draamateater:loe-edasi:2016-01-17T00:00:00",
+          "title": "Loe edasi",
+          "datetime_str": "17. jaanuaril 2016",
+          "iso_datetime": "2016-01-17T00:00:00",
           "venue": null,
-          "ticket_url": "https://www.draamateater.ee/uudis/alexela-tugi-toob-noored-ka-uuel-hooajal-soodsamalt-draamateatri-saali/",
+          "ticket_url": "https://www.draamateater.ee/uudis/pangalaen-300/",
           "ticket_status": null,
           "price_range": null
         },
