@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-06T11:05:20+00:00",
+  "generated_at": "2026-10-07T10:54:38+00:00",
   "scraper_version": "1.1.0",
   "theaters": [
     {
@@ -51,16 +51,6 @@
       "error": null,
       "shows": [
         {
-          "id": "linnateater:18-augusti-etendus-t-eline-l-s-j-b-ra:2026-08-18T00:00:00",
-          "title": "18. augusti etendus “Tõeline lääs” jääb ära!",
-          "datetime_str": "18.08.2026",
-          "iso_datetime": "2026-08-18T00:00:00",
-          "venue": null,
-          "ticket_url": "https://linnateater.ee/18-augusti-etendus-toeline-laas-jaab-ara/",
-          "ticket_status": null,
-          "price_range": null
-        },
-        {
           "id": "linnateater:18-ja-19-septembri-iphigeneia-agamemnon-elektra-etendused-j-:2026-08-26T00:00:00",
           "title": "18. ja 19. septembri “Iphigeneia. Agamemnon. Elektra.” etendused jäävad ära!",
           "datetime_str": "26.08.2026",
@@ -97,6 +87,16 @@
           "iso_datetime": "2026-09-16T00:00:00",
           "venue": null,
           "ticket_url": "https://linnateater.ee/opetajate-infouritus-tallinna-linnateatris/",
+          "ticket_status": null,
+          "price_range": null
+        },
+        {
+          "id": "linnateater:eve-mutso-p-lvis-helmi-tohvelmani-nimelise-auhinna:2026-10-06T00:00:00",
+          "title": "Eve Mutso pälvis Helmi Tohvelmani nimelise auhinna!",
+          "datetime_str": "06.10.2026",
+          "iso_datetime": "2026-10-06T00:00:00",
+          "venue": null,
+          "ticket_url": "https://linnateater.ee/eve-mutso-palvis-helmi-tohvelmani-nimelise-auhinna/",
           "ticket_status": null,
           "price_range": null
         },
