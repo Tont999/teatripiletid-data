@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-08T11:11:53+00:00",
+  "generated_at": "2026-10-09T11:10:59+00:00",
   "scraper_version": "1.1.0",
   "theaters": [
     {
@@ -21,16 +21,6 @@
           "price_range": null
         },
         {
-          "id": "draamateater:7-septembril-algab-novembri-ja-detsembri-etenduste-piletim-k:2026-09-05T00:00:00",
-          "title": "7. septembril algab novembri ja detsembri etenduste piletimüük",
-          "datetime_str": "05.09.2026",
-          "iso_datetime": "2026-09-05T00:00:00",
-          "venue": null,
-          "ticket_url": "https://www.draamateater.ee/uudis/7-detsembril-algab-novembri-ja-detsembri-etenduste-piletimuuk/",
-          "ticket_status": null,
-          "price_range": null
-        },
-        {
           "id": "draamateater:draamateater-kirjandust-nava-festivalil:2026-09-11T00:00:00",
           "title": "Draamateater Kirjandustänava festivalil",
           "datetime_str": "11.09.2026",
@@ -38,6 +28,16 @@
           "venue": null,
           "ticket_url": "https://www.draamateater.ee/uudis/draamateater-kirjandustanava-festivalil/",
           "ticket_status": null,
+          "price_range": null
+        },
+        {
+          "id": "draamateater:24-novembril-toimub-taas-noorelt-teatrisse-teatri-htu:2026-10-09T00:00:00",
+          "title": "24. novembril toimub taas „Noorelt teatrisse!“ teatriõhtu",
+          "datetime_str": "09.10.2026",
+          "iso_datetime": "2026-10-09T00:00:00",
+          "venue": null,
+          "ticket_url": "https://www.draamateater.ee/uudis/24-novembril-toimub-taas-noorelt-teatrisse-teatriohtu/",
+          "ticket_status": "available",
           "price_range": null
         }
       ]
