@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-10T10:28:09+00:00",
+  "generated_at": "2026-10-11T10:40:07+00:00",
   "scraper_version": "1.1.0",
   "theaters": [
     {
@@ -51,16 +51,6 @@
       "error": null,
       "shows": [
         {
-          "id": "linnateater:18-ja-19-septembri-iphigeneia-agamemnon-elektra-etendused-j-:2026-08-26T00:00:00",
-          "title": "18. ja 19. septembri “Iphigeneia. Agamemnon. Elektra.” etendused jäävad ära!",
-          "datetime_str": "26.08.2026",
-          "iso_datetime": "2026-08-26T00:00:00",
-          "venue": null,
-          "ticket_url": "https://linnateater.ee/18-ja-19-septembri-iphigeneia-agamemnon-elektra-etendused-jaavad-ara/",
-          "ticket_status": null,
-          "price_range": null
-        },
-        {
           "id": "linnateater:noorte-teatri-htu-linnateatris:2026-08-27T00:00:00",
           "title": "Noorte teatriõhtu Linnateatris!",
           "datetime_str": "27.08.2026",
@@ -97,6 +87,16 @@
           "iso_datetime": "2026-10-06T00:00:00",
           "venue": null,
           "ticket_url": "https://linnateater.ee/eve-mutso-palvis-helmi-tohvelmani-nimelise-auhinna/",
+          "ticket_status": null,
+          "price_range": null
+        },
+        {
+          "id": "linnateater:t-itub-aasta-linnateatri-uue-maja-avamisest:2026-10-10T00:00:00",
+          "title": "Täitub aasta Linnateatri uue maja avamisest!",
+          "datetime_str": "10.10.2026",
+          "iso_datetime": "2026-10-10T00:00:00",
+          "venue": null,
+          "ticket_url": "https://linnateater.ee/taitub-aasta-linnateatri-uue-maja-avamisest/",
           "ticket_status": null,
           "price_range": null
         },
