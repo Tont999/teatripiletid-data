@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-23T09:11:24+00:00",
+  "generated_at": "2026-10-24T08:44:18+00:00",
   "scraper_version": "1.1.0",
   "theaters": [
     {
@@ -10,16 +10,6 @@
       "scraped_ok": true,
       "error": null,
       "shows": [
-        {
-          "id": "draamateater:loe-edasi:2016-01-17T00:00:00",
-          "title": "Loe edasi",
-          "datetime_str": "17. jaanuaril 2016",
-          "iso_datetime": "2016-01-17T00:00:00",
-          "venue": null,
-          "ticket_url": "https://www.draamateater.ee/uudis/pangalaen-300/",
-          "ticket_status": null,
-          "price_range": null
-        },
         {
           "id": "draamateater:24-novembril-toimub-taas-noorelt-teatrisse-teatri-htu:2026-10-09T00:00:00",
           "title": "24. novembril toimub taas „Noorelt teatrisse!“ teatriõhtu",
@@ -37,6 +27,16 @@
           "iso_datetime": "2026-10-13T00:00:00",
           "venue": null,
           "ticket_url": "https://www.draamateater.ee/uudis/ule-rambi-laboratoorium-otsib-uusi-liikmeid-2/",
+          "ticket_status": null,
+          "price_range": null
+        },
+        {
+          "id": "draamateater:suures-saalis-esietendub-t-de-ja-igus:2026-10-23T00:00:00",
+          "title": "Suures saalis esietendub „Tõde ja õigus“",
+          "datetime_str": "23.10.2026",
+          "iso_datetime": "2026-10-23T00:00:00",
+          "venue": null,
+          "ticket_url": "https://www.draamateater.ee/uudis/suures-saalis-esietendub-tode-ja-oigus/",
           "ticket_status": null,
           "price_range": null
         }
