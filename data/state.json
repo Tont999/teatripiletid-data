@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-02T12:06:00+00:00",
+  "generated_at": "2026-11-03T11:42:35+00:00",
   "scraper_version": "1.1.0",
   "theaters": [
     {
@@ -41,10 +41,10 @@
           "price_range": null
         },
         {
-          "id": "draamateater:m-ngukava:2026-11-02T00:00:00",
+          "id": "draamateater:m-ngukava:2026-11-03T00:00:00",
           "title": "mäNguKava",
-          "datetime_str": "02.11",
-          "iso_datetime": "2026-11-02T00:00:00",
+          "datetime_str": "03.11",
+          "iso_datetime": "2026-11-03T00:00:00",
           "venue": null,
           "ticket_url": "https://www.draamateater.ee/?tickets=available#mangukava",
           "ticket_status": "available",
