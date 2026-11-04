@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-03T11:42:35+00:00",
+  "generated_at": "2026-11-04T11:55:10+00:00",
   "scraper_version": "1.1.0",
   "theaters": [
     {
@@ -10,16 +10,6 @@
       "scraped_ok": true,
       "error": null,
       "shows": [
-        {
-          "id": "draamateater:suures-saalis-esietendub-t-de-ja-igus:2026-10-23T00:00:00",
-          "title": "Suures saalis esietendub „Tõde ja õigus“",
-          "datetime_str": "23.10.2026",
-          "iso_datetime": "2026-10-23T00:00:00",
-          "venue": null,
-          "ticket_url": "https://www.draamateater.ee/uudis/suures-saalis-esietendub-tode-ja-oigus/",
-          "ticket_status": null,
-          "price_range": null
-        },
         {
           "id": "draamateater:ilmus-draamateatri-v-rske-ajaleht:2026-10-28T00:00:00",
           "title": "Ilmus Draamateatri värske ajaleht",
@@ -41,10 +31,20 @@
           "price_range": null
         },
         {
-          "id": "draamateater:m-ngukava:2026-11-03T00:00:00",
+          "id": "draamateater:draamateater-pakub-t-d-turundusjuhi-abile:2026-11-04T00:00:00",
+          "title": "Draamateater pakub tööd turundusjuhi abile",
+          "datetime_str": "04.11.2026",
+          "iso_datetime": "2026-11-04T00:00:00",
+          "venue": null,
+          "ticket_url": "https://www.draamateater.ee/uudis/draamateater-pakub-tood-turundusjuhi-abile/",
+          "ticket_status": null,
+          "price_range": null
+        },
+        {
+          "id": "draamateater:m-ngukava:2026-11-04T00:00:00",
           "title": "mäNguKava",
-          "datetime_str": "03.11",
-          "iso_datetime": "2026-11-03T00:00:00",
+          "datetime_str": "04.11",
+          "iso_datetime": "2026-11-04T00:00:00",
           "venue": null,
           "ticket_url": "https://www.draamateater.ee/?tickets=available#mangukava",
           "ticket_status": "available",
