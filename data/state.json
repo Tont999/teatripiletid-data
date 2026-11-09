@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-08T11:06:57+00:00",
+  "generated_at": "2026-11-09T12:37:51+00:00",
   "scraper_version": "1.1.0",
   "theaters": [
     {
@@ -46,8 +46,8 @@
           "datetime_str": "09.11",
           "iso_datetime": "2026-11-09T00:00:00",
           "venue": null,
-          "ticket_url": "https://www.draamateater.ee/mangukava/",
-          "ticket_status": null,
+          "ticket_url": "https://www.piletimaailm.com/performances/153686/buy?lang=et",
+          "ticket_status": "available",
           "price_range": null
         }
       ]
