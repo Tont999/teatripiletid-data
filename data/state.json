@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-09T12:37:51+00:00",
+  "generated_at": "2026-11-10T12:17:38+00:00",
   "scraper_version": "1.1.0",
   "theaters": [
     {
@@ -10,16 +10,6 @@
       "scraped_ok": true,
       "error": null,
       "shows": [
-        {
-          "id": "draamateater:ilmus-draamateatri-v-rske-ajaleht:2026-10-28T00:00:00",
-          "title": "Ilmus Draamateatri värske ajaleht",
-          "datetime_str": "28.10.2026",
-          "iso_datetime": "2026-10-28T00:00:00",
-          "venue": null,
-          "ticket_url": "https://www.draamateater.ee/uudis/ilmus-draamateatri-varske-ajaleht/",
-          "ticket_status": null,
-          "price_range": null
-        },
         {
           "id": "draamateater:2-novembril-tulevad-m-ki-jaanuari-ja-veebruari-etenduste-pil:2026-10-30T00:00:00",
           "title": "2. novembril tulevad müüki jaanuari ja veebruari etenduste piletid",
@@ -41,13 +31,23 @@
           "price_range": null
         },
         {
-          "id": "draamateater:m-ngukava:2026-11-09T00:00:00",
+          "id": "draamateater:m-ngukava:2026-11-10T00:00:00",
           "title": "mäNguKava",
-          "datetime_str": "09.11",
-          "iso_datetime": "2026-11-09T00:00:00",
+          "datetime_str": "10.11",
+          "iso_datetime": "2026-11-10T00:00:00",
           "venue": null,
-          "ticket_url": "https://www.piletimaailm.com/performances/153686/buy?lang=et",
+          "ticket_url": "https://www.piletimaailm.com/performances/153689/buy?lang=et",
           "ticket_status": "available",
+          "price_range": null
+        },
+        {
+          "id": "draamateater:loe-edasi:2027-00-11T15:00:00",
+          "title": "Loe edasi",
+          "datetime_str": "11.00–15.00",
+          "iso_datetime": "2027-00-11T15:00:00",
+          "venue": null,
+          "ticket_url": "https://www.draamateater.ee/uudis/joulusahver-tuleb-taas-3/",
+          "ticket_status": null,
           "price_range": null
         }
       ]
