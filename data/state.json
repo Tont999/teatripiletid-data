@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-10T12:17:38+00:00",
+  "generated_at": "2026-11-11T11:43:52+00:00",
   "scraper_version": "1.1.0",
   "theaters": [
     {
@@ -31,13 +31,13 @@
           "price_range": null
         },
         {
-          "id": "draamateater:m-ngukava:2026-11-10T00:00:00",
+          "id": "draamateater:m-ngukava:2026-11-11T00:00:00",
           "title": "mäNguKava",
-          "datetime_str": "10.11",
-          "iso_datetime": "2026-11-10T00:00:00",
+          "datetime_str": "11.11",
+          "iso_datetime": "2026-11-11T00:00:00",
           "venue": null,
-          "ticket_url": "https://www.piletimaailm.com/performances/153689/buy?lang=et",
-          "ticket_status": "available",
+          "ticket_url": "https://www.draamateater.ee/mangukava/",
+          "ticket_status": null,
           "price_range": null
         },
         {
