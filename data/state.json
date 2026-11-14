@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-13T11:57:32+00:00",
+  "generated_at": "2026-11-14T11:15:55+00:00",
   "scraper_version": "1.1.0",
   "theaters": [
     {
@@ -11,16 +11,6 @@
       "error": null,
       "shows": [
         {
-          "id": "draamateater:2-novembril-tulevad-m-ki-jaanuari-ja-veebruari-etenduste-pil:2026-10-30T00:00:00",
-          "title": "2. novembril tulevad müüki jaanuari ja veebruari etenduste piletid",
-          "datetime_str": "30.10.2026",
-          "iso_datetime": "2026-10-30T00:00:00",
-          "venue": null,
-          "ticket_url": "https://www.draamateater.ee/uudis/2-novembril-tulevad-muuki-jaanuari-ja-veebruari-etenduste-piletid/",
-          "ticket_status": "available",
-          "price_range": null
-        },
-        {
           "id": "draamateater:draamateater-pakub-t-d-turundusjuhi-abile:2026-11-04T00:00:00",
           "title": "Draamateater pakub tööd turundusjuhi abile",
           "datetime_str": "04.11.2026",
@@ -31,12 +21,22 @@
           "price_range": null
         },
         {
-          "id": "draamateater:m-ngukava:2026-11-13T00:00:00",
-          "title": "mäNguKava",
-          "datetime_str": "13.11",
+          "id": "draamateater:v-ikeses-saalis-esietendub-florian-zelleri-mets:2026-11-13T00:00:00",
+          "title": "Väikeses saalis esietendub Florian Zelleri „Mets“",
+          "datetime_str": "13.11.2026",
           "iso_datetime": "2026-11-13T00:00:00",
           "venue": null,
-          "ticket_url": "https://www.piletimaailm.com/performances/153689/buy?lang=et",
+          "ticket_url": "https://www.draamateater.ee/uudis/vaikeses-saalis-esietendub-florian-zelleri-mets/",
+          "ticket_status": null,
+          "price_range": null
+        },
+        {
+          "id": "draamateater:m-ngukava:2026-11-14T00:00:00",
+          "title": "mäNguKava",
+          "datetime_str": "14.11",
+          "iso_datetime": "2026-11-14T00:00:00",
+          "venue": null,
+          "ticket_url": "https://www.piletimaailm.com/performances/153688/buy?lang=et",
           "ticket_status": "available",
           "price_range": null
         },
