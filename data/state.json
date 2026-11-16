@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-15T11:48:38+00:00",
+  "generated_at": "2026-11-16T12:30:39+00:00",
   "scraper_version": "1.1.0",
   "theaters": [
     {
@@ -107,6 +107,16 @@
           "iso_datetime": "2026-10-10T00:00:00",
           "venue": null,
           "ticket_url": "https://linnateater.ee/taitub-aasta-linnateatri-uue-maja-avamisest/",
+          "ticket_status": null,
+          "price_range": null
+        },
+        {
+          "id": "linnateater:16-novembri-etendus-orvud-j-b-ra:2026-11-16T00:00:00",
+          "title": "16. novembri etendus “Orvud” jääb ära!",
+          "datetime_str": "16.11.2026",
+          "iso_datetime": "2026-11-16T00:00:00",
+          "venue": null,
+          "ticket_url": "https://linnateater.ee/16-novembri-etendus-orvud-jaab-ara/",
           "ticket_status": null,
           "price_range": null
         },
