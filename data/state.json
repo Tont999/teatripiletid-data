@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-20T12:36:00+00:00",
+  "generated_at": "2026-11-21T12:15:51+00:00",
   "scraper_version": "1.1.0",
   "theaters": [
     {
@@ -31,10 +31,10 @@
           "price_range": null
         },
         {
-          "id": "draamateater:m-ngukava:2026-11-20T00:00:00",
+          "id": "draamateater:m-ngukava:2026-11-21T00:00:00",
           "title": "mäNguKava",
-          "datetime_str": "20.11",
-          "iso_datetime": "2026-11-20T00:00:00",
+          "datetime_str": "21.11",
+          "iso_datetime": "2026-11-21T00:00:00",
           "venue": null,
           "ticket_url": "https://www.draamateater.ee/mangukava/",
           "ticket_status": null,
@@ -60,16 +60,6 @@
       "scraped_ok": true,
       "error": null,
       "shows": [
-        {
-          "id": "linnateater:noorte-teatri-htu-linnateatris:2026-08-27T00:00:00",
-          "title": "Noorte teatriõhtu Linnateatris!",
-          "datetime_str": "27.08.2026",
-          "iso_datetime": "2026-08-27T00:00:00",
-          "venue": null,
-          "ticket_url": "https://linnateater.ee/noorte-teatriohtu-linnateatris/",
-          "ticket_status": null,
-          "price_range": null
-        },
         {
           "id": "linnateater:tallinna-linnateater-kirjandust-nava-festivalil:2026-09-11T00:00:00",
           "title": "Tallinna Linnateater Kirjandustänava festivalil",
