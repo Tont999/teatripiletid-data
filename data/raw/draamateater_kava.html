@@ -89,8 +89,8 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 :root :where(.wp-block-pullquote){font-size: 1.5em;line-height: 1.6;}
 /*# sourceURL=global-styles-inline-css */
 </style>
-<link rel='stylesheet' id='draamateater-lausanne-css' href='https://www.draamateater.ee/wp-content/themes/draamateater/assets/fonts/lausanne/lausanne.css?ver=1791097577' media='all' />
-<link rel='stylesheet' id='theme-css' href='https://www.draamateater.ee/wp-content/themes/draamateater/css/theme.css?ver=1794405275' media='all' />
+<link rel='stylesheet' id='draamateater-lausanne-css' href='https://www.draamateater.ee/wp-content/themes/draamateater/assets/fonts/lausanne/lausanne.css?ver=1795774698' media='all' />
+<link rel='stylesheet' id='theme-css' href='https://www.draamateater.ee/wp-content/themes/draamateater/css/theme.css?ver=1795774698' media='all' />
 <script id="plausible-analytics-js" async data-cfasync='false' data-no-minify="true" data-no-optimize="1" data-noptimize="1" src="https://plausible.platvorm.ee/js/pa-Mrz1ozbj7vSX6YIiEuulB.js"></script>
 <script id="plausible-analytics-js-after">
 window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
@@ -589,6 +589,33 @@ plausible.init({"customProperties":{"user_logged_in":"no"}});
 	</div>
 </footer>
 
+<div class="analytics-notice" id="analytics-notice" role="region" aria-label="Statistika teatis">
+	<p class="analytics-notice__text">Draamateater.ee lehel kogutakse veebikülastuste statistikat Plausible’i abil.</p>
+	<button type="button" class="analytics-notice__close" aria-label="Sulge">&times;</button>
+</div>
+<script>
+( function () {
+	var key = 'draamateater-analytics-notice-closed';
+	var notice = document.getElementById( 'analytics-notice' );
+	var closed = false;
+
+	try {
+		closed = '1' === window.localStorage.getItem( key );
+	} catch ( e ) {}
+
+	if ( closed ) {
+		notice.remove();
+		return;
+	}
+
+	notice.querySelector( '.analytics-notice__close' ).addEventListener( 'click', function () {
+		try {
+			window.localStorage.setItem( key, '1' );
+		} catch ( e ) {}
+		notice.remove();
+	} );
+} )();
+</script>
 
 <script type="speculationrules">
 {"prefetch":[{"source":"document","where":{"and":[{"href_matches":"/*"},{"not":{"href_matches":["/wp-*.php","/wp-admin/*","/wp-content/uploads/*","/wp-content/*","/wp-content/plugins/*","/wp-content/themes/draamateater/*","/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
